@@ -30,7 +30,7 @@ const Header = () => {
                       <img
                         src="assets/images/world3-logo.png"
                         alt=""
-                        width={20}
+                        width={40}
                       />
                     </a>
                   </Link>
