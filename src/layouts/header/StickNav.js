@@ -37,43 +37,23 @@ const StickNav = ({
                     id="navbarSupportedContent"
                   >
                     <ul className="navigation">
-                      <li className="dropdown current">
-                        <a href="#">Home </a>
-                        <ul>
-                          <Home />
-                        </ul>
-                        <div className="dropdown-btn">
-                          <span className="fa fa-angle-right" />
-                        </div>
+                      <li className="dropdown">
+                        <Link href={"/"}>
+                          <a href="#">Home </a>
+                        </Link>
                       </li>
                       <li className="dropdown">
-                        <a href="#">Page </a>
-                        <ul>
-                          <Page />
-                        </ul>
-                        <div className="dropdown-btn">
-                          <span className="fa fa-angle-right" />
-                        </div>
+                        <Link href={"/about"}>
+                          <a href="/about">About </a>
+                        </Link>
                       </li>
-                      <li className="dropdown">
-                        <a href="#">Donation</a>
-                        <ul>
-                          <Donation />
-                        </ul>
-                        <div className="dropdown-btn">
-                          <span className="fa fa-angle-right" />
-                        </div>
+
+                      <li className="navigation">
+                        <Link href={"/donation-grid"}>
+                          <a href="/donation-grid">Donation</a>
+                        </Link>
                       </li>
-                      <li className="dropdown">
-                        <a href="#">Blog</a>
-                        <ul>
-                          <Blog />
-                        </ul>
-                        <div className="dropdown-btn">
-                          <span className="fa fa-angle-right" />
-                        </div>
-                      </li>
-                      <Portfolio />
+
                       <Contact />
                     </ul>
                   </div>
