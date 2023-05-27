@@ -82,7 +82,12 @@ const Header = () => {
                 >
                   <i className="far fa-search" />
                 </div>
-
+                <div
+                  className="menu-bar sidemenu-nav-toggler"
+                  onClick={() => setSideBarToggle(true)}
+                >
+                  <img src="assets/images/icons/icon-menu.png" alt="" />
+                </div>
                 <Link href={"/donation-grid"}>
                   <a href="#" className="primary_btn style-seven">
                     Donations
