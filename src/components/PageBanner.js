@@ -9,9 +9,9 @@ const PageBanner = ({ pageName, pageTitle }) => {
     >
       <div className="theme_container">
         <div className="content-box">
-          <div className="shape">
+          {/* <div className="shape">
             <img src="assets/images/resource/star-icon-2.png" alt="" />
-          </div>
+          </div> */}
           <div className="shape-two">
             <img src="assets/images/resource/page-title-1.png" alt="" />
           </div>
