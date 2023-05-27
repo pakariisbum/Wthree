@@ -105,11 +105,11 @@ const Header = () => {
         {/* Mobile Menu  */}
         <MobileMenu close={() => closMobileMenu()} />
         {/* End Mobile Menu */}
-        <div
+        {/* <div
           className="nav-overlay"
           style={{ display: sideBarToggle ? "block" : "none" }}
           onClick={() => setSideBarToggle(false)}
-        />
+        /> */}
       </header>
       <HeaderSidebar
         open={sideBarToggle}
