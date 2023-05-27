@@ -84,10 +84,12 @@ const Header = () => {
                 >
                   <img src="assets/images/icons/icon-menu.png" alt="" />
                 </div> */}
-                <a href="#" className="primary_btn style-seven">
-                  Donation
-                  <i className="far fa-heart" />
-                </a>
+                <Link href={"/donation-grid"}>
+                  <a href="#" className="primary_btn style-seven">
+                    Donation
+                    <i className="far fa-heart" />
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
