@@ -18,8 +18,9 @@ const StickNav = ({
                 <Link href="/">
                   <a>
                     <img
-                      src={logo ? logo : "assets/images/logo-light.png"}
+                      src="assets/images/world3-logo.png"
                       alt=""
+                      width={50}
                     />
                   </a>
                 </Link>
