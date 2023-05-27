@@ -96,11 +96,11 @@ const Header = () => {
         </div>
         {/*End Header Upper*/}
         {/* Sticky Header  */}
-        <StickNav
+        {/* <StickNav
           openMobileMenu={() => openMobileMenu()}
           openSidebar={() => setSideBarToggle(true)}
           openSearchBar={() => setSearchToggle(true)}
-        />
+        /> */}
         {/* End Sticky Menu */}
         {/* Mobile Menu  */}
         <MobileMenu close={() => closMobileMenu()} />
