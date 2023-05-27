@@ -89,8 +89,8 @@ const Header = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="icon icon-tabler icon-tabler-user-circle"
-                    width="24"
-                    height="24"
+                    width="28"
+                    height="28"
                     className="text-white "
                     viewBox="0 0 24 24"
                     stroke-width="2"
