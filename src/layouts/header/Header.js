@@ -54,10 +54,12 @@ const Header = () => {
                           </ul>
                         </li>
                         <li className="dropdown">
-                          <a href="/about">About </a>
-                          <ul>
+                          <Link href={"/about"}>
+                            <a href="/about">About </a>
+                          </Link>
+                          {/* <ul>
                             <Page />
-                          </ul>
+                          </ul> */}
                         </li>
                         {/* <li className="dropdown">
                           <a href="#">Page </a>
