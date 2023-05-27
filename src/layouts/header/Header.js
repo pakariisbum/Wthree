@@ -48,10 +48,9 @@ const Header = () => {
                     >
                       <ul className="navigation">
                         <li className="dropdown">
-                          <a href="#">Home </a>
-                          <ul>
-                            <Home />
-                          </ul>
+                          <Link href={"/"}>
+                            <a href="#">Home </a>
+                          </Link>
                         </li>
                         <li className="dropdown">
                           <Link href={"/about"}>
