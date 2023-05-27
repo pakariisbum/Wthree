@@ -116,11 +116,7 @@ const Index = () => {
                       </a>
                     </Link>
                   </div>
-                  <div className="contact-info">
-                    <div className="icon">
-                      <i className="flaticon-phone" />
-                    </div>
-                  </div>
+                  <div className="contact-info"></div>
                 </div>
               </div>
             </div>
