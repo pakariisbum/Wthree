@@ -77,7 +77,8 @@ export const color = () => {
       { name: "theme-gray-color", value: "777777" },
     ],
     default: [
-      { name: "theme-color", value: "39C3E7" },
+      // { name: "theme-color", value: "39C3E7" },
+      { name: "theme-color", value: "00000" },
       { name: "theme-dark-color", value: "232323" },
       { name: "theme-gray-color", value: "777777" },
     ],
