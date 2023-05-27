@@ -61,7 +61,7 @@ const Header = () => {
                         </li>
                         <li className="dropdown">
                           <Link href={"/donation-grid"}>
-                            <a href="#">Donation</a>
+                            <a href="/donation-grid">Donation</a>
                           </Link>
 
                           {/* <ul>
