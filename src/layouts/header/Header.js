@@ -63,10 +63,6 @@ const Header = () => {
                           <Link href={"/donation-grid"}>
                             <a href="/donation-grid">Donation</a>
                           </Link>
-
-                          {/* <ul>
-                            <Donation />
-                          </ul> */}
                         </li>
                         <li className="dropdown">
                           <a href="#">Blog</a>
