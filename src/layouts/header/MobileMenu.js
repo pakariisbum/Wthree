@@ -19,7 +19,7 @@ const MobileMenu = ({ close }) => {
         <div className="nav-logo">
           <Link href="/">
             <a>
-              <img src="assets/images/logo-light.png" alt="" title="" />
+              <img src="assets/images/world3-logo.png" alt="" width={50} />{" "}
             </a>
           </Link>
         </div>
