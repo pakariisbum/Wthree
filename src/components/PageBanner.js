@@ -22,14 +22,6 @@ const PageBanner = ({ pageName, pageTitle }) => {
             <div className="title">
               <h1>{pageTitle ? pageTitle : pageName}</h1>
             </div>
-            <ul className="bread-crumb">
-              <li>
-                <Link href="/">
-                  <a>Home</a>
-                </Link>
-              </li>
-              <li>{pageName}</li>
-            </ul>
           </div>
         </div>
       </div>
