@@ -173,7 +173,11 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6"></div>
+            <div className="col-lg-6">
+              <div className="image">
+                <img src="assets/images/resource/btn.jpg" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
