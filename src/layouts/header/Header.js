@@ -77,13 +77,6 @@ const Header = () => {
                     </div>
                   </nav>
                   {/* language */}
-                  <div className="language">
-                    <select>
-                      <option data-display="English">English</option>
-                      <option value={1}>French</option>
-                      <option value={2}>Spanish</option>
-                    </select>
-                  </div>
                 </div>
               </div>
               <div className="right-column">
