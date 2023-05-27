@@ -71,12 +71,7 @@ const Header = () => {
                             <a href="/donation-grid">Donation</a>
                           </Link>
                         </li>
-                        <li className="dropdown">
-                          <a href="#">Blog</a>
-                          <ul>
-                            <Blog />
-                          </ul>
-                        </li>
+
                         <Contact />
                       </ul>
                     </div>
