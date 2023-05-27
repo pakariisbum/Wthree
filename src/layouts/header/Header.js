@@ -99,7 +99,7 @@ const Header = () => {
         <StickNav
           openMobileMenu={() => openMobileMenu()}
           openSidebar={() => setSideBarToggle(true)}
-          openSearchBar={() => setSearchToggle(true)}
+          // openSearchBar={() => setSearchToggle(true)}
         />
         {/* End Sticky Menu */}
         {/* Mobile Menu  */}
