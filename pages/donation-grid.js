@@ -16,7 +16,7 @@ const DonutChart = dynamic(() => import("../src/components/DonutChart"), {
 const DonationGrid = () => {
   return (
     <Layouts>
-      <PageBanner pageName={"Donation Grid"} />
+      <PageBanner pageName={"Donation"} />
       <section className="donation-section">
         <div className="theme_container">
           <div className="title-box text-center">
