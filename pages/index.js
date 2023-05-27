@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Layouts from "../src/layouts/Layouts";
 import { fiveItemCarousel, testimonialSlider } from "../src/sliderProps";
-import Header from "../src/layouts/header/Header";
 
 const Counter = dynamic(() => import("../src/components/Counter"), {
   ssr: false,
@@ -23,7 +22,6 @@ const Index = () => {
   return (
     <Layouts>
       {" "}
-      <Header />
       <section className="banner-section-one">
         <Index1Hero />
       </section>
