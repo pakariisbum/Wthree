@@ -84,7 +84,7 @@ const DonationGrid = () => {
                       To Go<span className="crl3"> $864</span>
                     </li>
                   </ul>
-                  <Link href="/contact">
+                  <Link href="/donation-list">
                     <a className="primary_btn style-two">
                       Donation
                       <i className="far fa-heart" />
@@ -136,7 +136,7 @@ const DonationGrid = () => {
                       To Go<span className="crl3"> $864</span>
                     </li>
                   </ul>
-                  <Link href="/contact">
+                  <Link href="/donation-list">
                     <a className="primary_btn style-two">
                       Donation
                       <i className="far fa-heart" />
@@ -188,7 +188,7 @@ const DonationGrid = () => {
                       To Go<span className="crl3"> $864</span>
                     </li>
                   </ul>
-                  <Link href="/contact">
+                  <Link href="/donation-list">
                     <a className="primary_btn style-two">
                       Donation
                       <i className="far fa-heart" />
@@ -250,7 +250,7 @@ const DonationGrid = () => {
                       To Go<span className="crl3"> $864</span>
                     </li>
                   </ul>
-                  <Link href="/contact">
+                  <Link href="/donation-list">
                     <a className="primary_btn style-two">
                       Donation
                       <i className="far fa-heart" />
@@ -302,7 +302,7 @@ const DonationGrid = () => {
                       To Go<span className="crl3"> $864</span>
                     </li>
                   </ul>
-                  <Link href="/contact">
+                  <Link href="/donation-list">
                     <a className="primary_btn style-two">
                       Donation
                       <i className="far fa-heart" />
@@ -354,7 +354,7 @@ const DonationGrid = () => {
                       To Go<span className="crl3"> $864</span>
                     </li>
                   </ul>
-                  <Link href="/contact">
+                  <Link href="/donation-list">
                     <a className="primary_btn style-two">
                       Donation
                       <i className="far fa-heart" />
@@ -406,7 +406,7 @@ const DonationGrid = () => {
                       To Go<span className="crl3"> $864</span>
                     </li>
                   </ul>
-                  <Link href="/contact">
+                  <Link href="/donation-list">
                     <a className="primary_btn style-two">
                       Donation
                       <i className="far fa-heart" />
@@ -458,7 +458,7 @@ const DonationGrid = () => {
                       To Go<span className="crl3"> $864</span>
                     </li>
                   </ul>
-                  <Link href="/contact">
+                  <Link href="/donation-list">
                     <a className="primary_btn style-two">
                       Donation
                       <i className="far fa-heart" />
@@ -510,7 +510,7 @@ const DonationGrid = () => {
                       To Go<span className="crl3"> $864</span>
                     </li>
                   </ul>
-                  <Link href="/contact">
+                  <Link href="/donation-list">
                     <a className="primary_btn style-two">
                       Donation
                       <i className="far fa-heart" />
