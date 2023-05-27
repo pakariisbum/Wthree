@@ -101,60 +101,7 @@ const Footer = ({ extraClass }) => {
                 </div>
                 {/*End Footer Widget Item*/}
                 {/*Start Footer Widget Item*/}
-                <div
-                  className="col-lg-3 col-md-6 wow animated fadeInUp"
-                  data-wow-delay="0.3s"
-                >
-                  <div className="footer-widget-item mar-t50 style-two">
-                    <div className="title">
-                      <h2>Recent News</h2>
-                    </div>
-                    <div className="footer-widget-news">
-                      <ul>
-                        <li>
-                          <div className="img-box">
-                            <img
-                              src="assets/images/resource/footer-1.jpg"
-                              alt=""
-                            />
-                          </div>
-                          <div className="text-box">
-                            <p>
-                              <span className="far fa-calendar-alt" />
-                              24th January 2021
-                            </p>
-                            <h6>
-                              <a href="#">
-                                We can build anything ni <br />
-                                hill ground or building.
-                              </a>
-                            </h6>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="img-box">
-                            <img
-                              src="assets/images/resource/footer-2.jpg"
-                              alt=""
-                            />
-                          </div>
-                          <div className="text-box">
-                            <p>
-                              <span className="far fa-calendar-alt" />
-                              24th January 2021
-                            </p>
-                            <h6>
-                              <a href="#">
-                                We can build anything ni <br />
-                                hill ground or building.
-                              </a>
-                            </h6>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+
                 {/*End Footer Widget Item*/}
                 {/*Start Footer Widget Item*/}
                 <div
