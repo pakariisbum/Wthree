@@ -66,13 +66,15 @@ const StickNav = ({
                 <i className="far fa-search" />
               </div>
 
-              <a
-                href="#"
-                className={btnClass ? btnClass : "primary_btn style-seven"}
-              >
-                Donation
-                <i className="far fa-heart" />
-              </a>
+              <Link href={"/donation-grid"}>
+                <a
+                  href="#"
+                  className={btnClass ? btnClass : "primary_btn style-seven"}
+                >
+                  Donation
+                  <i className="far fa-heart" />
+                </a>
+              </Link>
             </div>
           </div>
         </div>
