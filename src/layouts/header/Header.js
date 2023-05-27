@@ -78,12 +78,12 @@ const Header = () => {
                 >
                   <i className="far fa-search" />
                 </div>
-                <div
+                {/* <div
                   className="menu-bar sidemenu-nav-toggler"
                   onClick={() => setSideBarToggle(true)}
                 >
                   <img src="assets/images/icons/icon-menu.png" alt="" />
-                </div>
+                </div> */}
                 <a href="#" className="primary_btn style-seven">
                   Donation
                   <i className="far fa-heart" />
