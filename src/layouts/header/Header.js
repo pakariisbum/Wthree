@@ -60,10 +60,13 @@ const Header = () => {
                           </ul>
                         </li>
                         <li className="dropdown">
-                          <a href="#">Donation</a>
-                          <ul>
+                          <Link href={"/donation-grid"}>
+                            <a href="#">Donation</a>
+                          </Link>
+
+                          {/* <ul>
                             <Donation />
-                          </ul>
+                          </ul> */}
                         </li>
                         <li className="dropdown">
                           <a href="#">Blog</a>
