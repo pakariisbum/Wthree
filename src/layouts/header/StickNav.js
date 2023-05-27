@@ -10,83 +10,112 @@ const StickNav = ({
 }) => {
   return (
     <div className="sticky-header animated slideInDown">
-      <header className="main-header header-style-two">
-        {/* Header Upper */}
-        <div className="header-upper">
-          <div className="header-container-box">
-            <div className="inner-container">
-              <div className="left-column">
-                <div className="logo">
-                  <Link href="/">
-                    <a>
-                      <img src="assets/images/logo-light.png" alt="" />
-                    </a>
-                  </Link>
-                </div>
-                {/*Nav Box*/}
-                <div className="nav-outer">
-                  {/*Mobile Navigation Toggler*/}
-                  <div
-                    className="mobile-nav-toggler"
-                    onClick={() => openMobileMenu()}
-                  >
-                    <img src="assets/images/icons/icon-bar.png" alt="" />
-                  </div>
-                  {/* Main Menu */}
-                  <nav className="main-menu navbar-expand-md navbar-light">
-                    <div
-                      className="collapse navbar-collapse show clearfix"
-                      id="navbarSupportedContent"
-                    >
-                      <ul className="navigation">
-                        <li className="dropdown">
-                          <Link href={"/"}>
-                            <a href="#">Home </a>
-                          </Link>
-                        </li>
-                        <li className="dropdown">
-                          <Link href={"/about"}>
-                            <a href="/about">About </a>
-                          </Link>
-                        </li>
-
-                        <li className="navigation">
-                          <Link href={"/donation-grid"}>
-                            <a href="/donation-grid">Donation</a>
-                          </Link>
-                        </li>
-
-                        <Contact />
-                      </ul>
-                    </div>
-                  </nav>
-                  {/* language */}
-                </div>
-              </div>
-              <div className="right-column">
-                <div
-                  className="search-toggler"
-                  onClick={() => setSearchToggle(true)}
-                >
-                  <i className="far fa-search" />
-                </div>
-                {/* <div
-                  className="menu-bar sidemenu-nav-toggler"
-                  onClick={() => setSideBarToggle(true)}
-                >
-                  <img src="assets/images/icons/icon-menu.png" alt="" />
-                </div> */}
-                <Link href={"/donation-grid"}>
-                  <a href="#" className="primary_btn style-seven">
-                    Donation
-                    <i className="far fa-heart" />
+      <div className="header-upper">
+        <div className="header-container-box">
+          <div className="inner-container">
+            <div className="left-column">
+              <div className="logo">
+                <Link href="/">
+                  <a>
+                    <img
+                      src={logo ? logo : "assets/images/logo-light.png"}
+                      alt=""
+                    />
                   </a>
                 </Link>
               </div>
+              {/*Nav Box*/}
+              <div className="nav-outer">
+                {/*Mobile Navigation Toggler*/}
+                <div className="mobile-nav-toggler">
+                  <img src="assets/images/icons/icon-bar.png" alt="" />
+                </div>
+                {/* Main Menu */}
+                <nav className="main-menu navbar-expand-md navbar-light">
+                  <div
+                    className="collapse navbar-collapse show clearfix"
+                    id="navbarSupportedContent"
+                  >
+                    <ul className="navigation">
+                      <li className="dropdown current">
+                        <a href="#">Home </a>
+                        <ul>
+                          <Home />
+                        </ul>
+                        <div className="dropdown-btn">
+                          <span className="fa fa-angle-right" />
+                        </div>
+                      </li>
+                      <li className="dropdown">
+                        <a href="#">Page </a>
+                        <ul>
+                          <Page />
+                        </ul>
+                        <div className="dropdown-btn">
+                          <span className="fa fa-angle-right" />
+                        </div>
+                      </li>
+                      <li className="dropdown">
+                        <a href="#">Donation</a>
+                        <ul>
+                          <Donation />
+                        </ul>
+                        <div className="dropdown-btn">
+                          <span className="fa fa-angle-right" />
+                        </div>
+                      </li>
+                      <li className="dropdown">
+                        <a href="#">Blog</a>
+                        <ul>
+                          <Blog />
+                        </ul>
+                        <div className="dropdown-btn">
+                          <span className="fa fa-angle-right" />
+                        </div>
+                      </li>
+                      <Portfolio />
+                      <Contact />
+                    </ul>
+                  </div>
+                </nav>
+                {/* language */}
+                <div className="language">
+                  <select>
+                    <option data-display="English">English</option>
+                    <option value={1}>French</option>
+                    <option value={2}>Spanish</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div className="right-column">
+              <div className="search-toggler" onClick={() => openSearchBar()}>
+                <i className="far fa-search" />
+              </div>
+              <div
+                className="menu-bar sidemenu-nav-toggler"
+                onClick={() => openSidebar()}
+              >
+                <img
+                  src={
+                    sidebarImg
+                      ? sidebarImg
+                      : "assets/images/icons/icon-menu.png"
+                  }
+                  alt=""
+                />
+              </div>
+              <a
+                href="#"
+                className={btnClass ? btnClass : "primary_btn style-seven"}
+              >
+                Donation
+                <i className="far fa-heart" />
+              </a>
             </div>
           </div>
         </div>
-      </header>
+      </div>
     </div>
   );
 };
