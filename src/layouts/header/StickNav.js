@@ -65,19 +65,7 @@ const StickNav = ({
               <div className="search-toggler" onClick={() => openSearchBar()}>
                 <i className="far fa-search" />
               </div>
-              <div
-                className="menu-bar sidemenu-nav-toggler"
-                onClick={() => openSidebar()}
-              >
-                <img
-                  src={
-                    sidebarImg
-                      ? sidebarImg
-                      : "assets/images/icons/icon-menu.png"
-                  }
-                  alt=""
-                />
-              </div>
+
               <a
                 href="#"
                 className={btnClass ? btnClass : "primary_btn style-seven"}
