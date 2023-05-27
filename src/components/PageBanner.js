@@ -20,7 +20,7 @@ const PageBanner = ({ pageName, pageTitle }) => {
           </div>
           <div className="content-wrapper">
             <div className="title">
-              <h1>{pageTitle}</h1>
+              <h1>{pageTitle ? pageTitle : pageName}</h1>
             </div>
             <ul className="bread-crumb">
               <li>
