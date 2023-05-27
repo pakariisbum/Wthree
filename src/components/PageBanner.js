@@ -12,12 +12,12 @@ const PageBanner = ({ pageName, pageTitle }) => {
           {/* <div className="shape">
             <img src="assets/images/resource/star-icon-2.png" alt="" />
           </div> */}
-          <div className="shape-two">
+          {/* <div className="shape-two">
             <img src="assets/images/resource/page-title-1.png" alt="" />
           </div>
           <div className="shape-three">
             <img src="assets/images/resource/icon-3.png" alt="" />
-          </div>
+          </div> */}
           <div className="content-wrapper">
             <div className="title">
               <h1>{pageTitle ? pageTitle : pageName}</h1>
