@@ -16,7 +16,7 @@ const HeaderSidebar = ({ open, close }) => {
             </div>
             <div className="about-widget widget">
               <div className="logo">
-                <img src="assets/images/logo-light.png" alt="" />
+                <img src="assets/images/world3-logo.png" alt="" width={50} />{" "}
               </div>
               <div className="text">
                 We Have Over 40 Payment Ways for Locking the Lowest Room Rates.
