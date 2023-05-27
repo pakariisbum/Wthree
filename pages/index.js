@@ -103,7 +103,7 @@ const Index = () => {
                     </li>
                     <li>
                       <i className="fas fa-check" />
-                      Climate Change{" "}
+                      Climate Changed{" "}
                     </li>
                   </ul>
                 </div>
