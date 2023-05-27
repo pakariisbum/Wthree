@@ -12,7 +12,7 @@ const Footer = ({ extraClass }) => {
               <div className="row clearfix">
                 {/*Start Footer Widget Item*/}
                 <div
-                  className="col-lg-3 col-md-6 wow animated fadeInUp"
+                  className="col-lg-3 col-md-4 wow animated fadeInUp"
                   data-wow-delay="0.1s"
                 >
                   <div className="footer-widget-item">
