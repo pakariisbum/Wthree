@@ -56,16 +56,8 @@ const Header = () => {
                           <Link href={"/about"}>
                             <a href="/about">About </a>
                           </Link>
-                          {/* <ul>
-                            <Page />
-                          </ul> */}
                         </li>
-                        {/* <li className="dropdown">
-                          <a href="#">Page </a>
-                          <ul>
-                            <Page />
-                          </ul>
-                        </li> */}
+
                         <li className="navigation">
                           <Link href={"/donation-grid"}>
                             <a href="/donation-grid">Donation</a>
