@@ -59,7 +59,7 @@ const Header = () => {
                             <Page />
                           </ul>
                         </li>
-                        <li className="dropdown">
+                        <li className="navigation">
                           <Link href={"/donation-grid"}>
                             <a href="/donation-grid">Donation</a>
                           </Link>
@@ -74,7 +74,6 @@ const Header = () => {
                             <Blog />
                           </ul>
                         </li>
-                        <Portfolio />
                         <Contact />
                       </ul>
                     </div>
