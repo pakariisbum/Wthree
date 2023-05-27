@@ -91,6 +91,7 @@ const Header = () => {
                     class="icon icon-tabler icon-tabler-user-circle"
                     width="24"
                     height="24"
+                    className="text-white "
                     viewBox="0 0 24 24"
                     stroke-width="2"
                     stroke="currentColor"
