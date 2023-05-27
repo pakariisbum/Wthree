@@ -86,7 +86,7 @@ const Header = () => {
                 </div> */}
                 <Link href={"/donation-grid"}>
                   <a href="#" className="primary_btn style-seven">
-                    Donation
+                    Donations
                     <i className="far fa-heart" />
                   </a>
                 </Link>
