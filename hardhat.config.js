@@ -20,6 +20,11 @@ module.exports = {
       accounts: [privateKey],
       network_id: 51,
     },
+    mumbai: {
+      url: "https://rpc-mumbai.maticvigil.com",
+      accounts: [privateKey],
+      network_id: 80001,
+    },
   },
   solidity: {
     version: "0.8.9",
