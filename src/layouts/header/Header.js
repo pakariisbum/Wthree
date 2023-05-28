@@ -5,7 +5,6 @@ import HeaderSidebar from "./HeaderSidebar";
 import { Blog, Contact, Donation, Home, Page, Portfolio } from "./Menus";
 import MobileMenu from "./MobileMenu";
 import StickNav from "./StickNav";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Header = () => {
   const [sideBarToggle, setSideBarToggle] = useState(false);
@@ -77,14 +76,6 @@ const Header = () => {
                 </div>
               </div>
               <div className="right-column">
-                <ConnectButton
-                  className="tw-mx-8"
-                  accountStatus={"avatar"}
-                  showBalance={{
-                    smallScreen: true,
-                    largeScreen: true,
-                  }}
-                />
                 <div
                   className="search-toggler"
                   onClick={() => setSearchToggle(true)}
