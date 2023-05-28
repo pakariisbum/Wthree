@@ -4,6 +4,8 @@ import "../styles/globals.css";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 
 function MyApp({ Component, pageProps }) {
+  const activeChain = "mumbai";
+
   return (
     <ThirdwebProvider activeChain={activeChain}>
       <Fragment>
