@@ -19,7 +19,7 @@ const DonationGrid = () => {
   useEffect(() => {
     const fetchDonations = async () => {
       try {
-        const res = await getDonation(); // Await the resolution of the promise
+        const res = await getDonations(); // Await the resolution of the promise
         console.log(res);
       } catch (error) {
         console.log(error);
