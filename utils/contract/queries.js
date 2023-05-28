@@ -9,6 +9,7 @@ export async function createDonation(
   pictures,
   category,
   startTime,
+  country,
   endTime
 ) {
   try {
@@ -20,6 +21,7 @@ export async function createDonation(
       pictures,
       category,
       startTime,
+      country,
       endTime
     );
 
