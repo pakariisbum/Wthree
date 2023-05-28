@@ -136,7 +136,6 @@ function toWei(amount) {
 }
 
 function parseErrorMsg(e) {
-  console.log(e);
   const json = JSON.parse(JSON.stringify(e));
   return json?.reason || json?.error?.message;
 }
