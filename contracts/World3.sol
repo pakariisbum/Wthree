@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
 // SPDX-IGNORE-DUE-TO-MISMATCH
-
 pragma solidity ^0.8.0;
 
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
@@ -37,7 +36,7 @@ contract DonationContract is VRFConsumerBase, KeeperCompatibleInterface {
     // Chainlink Keepers variables
     uint256 public constant MIN_THRESHOLD_PERCENTAGE = 50;
     uint256 public donationAccumulated;
-
+    uint256 public constant THRESHOLD = 100; // Placeholder threshold value
     // Chainlink Alarm Clock variables
     uint256 public endTime;
 
@@ -185,9 +184,13 @@ contract DonationContract is VRFConsumerBase, KeeperCompatibleInterface {
         _;
     }
 
-    // Modifier to check if the caller is the contract owner
+      // Modifier to check if the caller is the contract owner
     modifier onlyOwner() {
         require(msg.sender == owner(), "Caller is not the owner");
         _;
     }
+
+    // Function to get the contract owner's address
+    function owner() public view returns (address) {
+    return msg.sender;    }
 }
