@@ -3,7 +3,7 @@ require("@nomiclabs/hardhat-waffle");
 require("hardhat-contract-sizer");
 const fs = require("fs");
 // const privateKey = fs.readFileSync("secret").toString();
-const privateKey = fs.readFileSync(".secret").toString().trim();
+const privateKey = fs.readFileSync("secret.txt").toString().trim();
 
 const projectId = "xxx";
 
