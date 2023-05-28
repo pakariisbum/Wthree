@@ -9,18 +9,21 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol";
 
 contract DonationContract is VRFConsumerBase, KeeperCompatibleInterface {
-   struct Donation {
-        string name;
-        string description; // New description field
-        uint256 goal;
-        uint256 amountRaised;
-        uint256 toGo;
-        string[] pictures;
-        string category;
-        mapping(address => uint256) donors;
-        uint256 startTime;
-        uint256 endTime;
-    }
+
+  struct Donation {
+    string name;
+    string description;
+    uint256 goal;
+    uint256 amountRaised;
+    uint256 toGo;
+    string[] pictures;
+    string category;
+    uint256[] donorAmounts; // Array to store the donation amounts
+    address[] donors; // Array to store the addresses of the donors
+    uint256 startTime;
+    uint256 endTime;
+}
+
 
     mapping(uint256 => Donation) public donations;
     uint256 public donationCount;
@@ -54,27 +57,24 @@ contract DonationContract is VRFConsumerBase, KeeperCompatibleInterface {
 
     // Admin functions
 
-   function createDonation(
+    function createDonation(
         string memory _name,
-        string memory _description, // New parameter
+        string memory _category,
         uint256 _goal,
         string[] memory _pictures,
-        string memory _category,
         uint256 _startTime,
         uint256 _endTime
     ) public onlyOwner {
         require(_startTime < _endTime, "Invalid start and end time");
-        donations[donationCount] = Donation(
-            _name,
-            _description, // Assign the new parameter
-            _goal,
-            0,
-            _goal,
-            _pictures,
-            _category,
-            _startTime,
-            _endTime
-        );
+        Donation storage newDonation = donations[donationCount];
+        newDonation.name = _name;
+        newDonation.goal = _goal;
+        newDonation.amountRaised = 0;
+        newDonation.toGo = _goal;
+        newDonation.pictures = _pictures;
+        newDonation.category = _category;
+        newDonation.startTime = _startTime;
+        newDonation.endTime = _endTime;
         donationCount++;
     }
 
@@ -109,7 +109,8 @@ contract DonationContract is VRFConsumerBase, KeeperCompatibleInterface {
         require(block.timestamp <= donation.endTime, "Donation campaign has ended");
         donation.amountRaised += _amount;
         donation.toGo = donation.goal - donation.amountRaised;
-        donation.donors[msg.sender] += _amount;
+        donation.donorAmounts.push(_amount);
+        donation.donors.push(msg.sender);
 
         if (donation.amountRaised >= (donation.goal * MIN_THRESHOLD_PERCENTAGE) / 100) {
             // Trigger Chainlink Keepers function
@@ -120,7 +121,24 @@ contract DonationContract is VRFConsumerBase, KeeperCompatibleInterface {
     function getDonations() public view returns (Donation[] memory) {
         Donation[] memory allDonations = new Donation[](donationCount);
         for (uint256 i = 0; i < donationCount; i++) {
-            allDonations[i] = donations[i];
+            Donation storage donation = donations[i];
+            uint256[] memory donorAmounts = new uint256[](donation.donors.length);
+            for (uint256 j = 0; j < donation.donors.length; j++) {
+                donorAmounts[j] = donation.donorAmounts[j];
+            }
+            allDonations[i] = Donation(
+                donation.name,
+                donation.description,
+                donation.goal,
+                donation.amountRaised,
+                donation.toGo,
+                donation.pictures,
+                donation.category,
+                donorAmounts,
+                donation.donors,
+                donation.startTime,
+                donation.endTime
+            );
         }
         return allDonations;
     }
@@ -184,7 +202,7 @@ contract DonationContract is VRFConsumerBase, KeeperCompatibleInterface {
         _;
     }
 
-      // Modifier to check if the caller is the contract owner
+    // Modifier to check if the caller is the contract owner
     modifier onlyOwner() {
         require(msg.sender == owner(), "Caller is not the owner");
         _;
@@ -192,5 +210,6 @@ contract DonationContract is VRFConsumerBase, KeeperCompatibleInterface {
 
     // Function to get the contract owner's address
     function owner() public view returns (address) {
-    return msg.sender;    }
+        return msg.sender;
+    }
 }
