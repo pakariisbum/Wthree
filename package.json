@@ -12,6 +12,7 @@
     "@chainlink/contracts": "^0.6.1",
     "apexcharts": "^3.33.2",
     "autoprefixer": "^10.4.14",
+    "hardhat-gas-reporter": "^1.0.8",
     "next": "12.1.0",
     "postcss": "^8.4.23",
     "react": "17.0.2",
