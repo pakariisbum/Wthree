@@ -15,23 +15,33 @@ export async function createDonation(
   try {
     const contractObj = await contract();
     // Assuming you have a contract function to get the contract instance
-    const amountInWei = ethers.utils.parseEther(goal);
-    const startTime_ = Math.floor(startTime.getTime() / 1000); // Convert to Unix timestamp
-    const endTime_ = Math.floor(endTime.getTime() / 1000); // Convert to Unix timestamp
-    const data = await contractObj.createDonation(
-      name,
-      description,
-      amountInWei,
-      pictures,
-      category,
-      startTime_,
-      country,
-      endTime_
-    );
+    // const amountInWei = ethers.utils.parseEther(goal);
+    // const startTime_ = Math.floor(startTime.getTime() / 1000); // Convert to Unix timestamp
+    // const endTime_ = Math.floor(endTime.getTime() / 1000); // Convert to Unix timestamp
+    // const data = await contractObj.createDonation(
+    //   name,
+    //   description,
+    //   amountInWei,
+    //   pictures,
+    //   category,
+    //   startTime_,
+    //   country,
+    //   endTime_
+    // );
 
-    const receipt = await data.wait();
-    console.log(receipt);
-    return receipt;
+    // const receipt = await data.wait();
+    // console.log(receipt);
+    // return receipt;
+
+    console.log(res);
+    console.log("name", name);
+    console.log("description", description);
+    console.log("goal", goal);
+    console.log("pictures", pictures);
+    console.log("category", category);
+    console.log("starttime", startTime);
+    console.log("endtime", endTime);
+    console.log("country", country);
   } catch (e) {
     return parseErrorMsg(e);
   }
