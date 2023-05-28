@@ -17,13 +17,16 @@ const DonutChart = dynamic(() => import("../src/components/DonutChart"), {
 
 const DonationGrid = () => {
   useEffect(() => {
-    const allDonations = async () => {
-      let res = getDonation();
-      console.log(res);
+    const fetchDonations = async () => {
+      try {
+        const res = await getDonation(); // Await the resolution of the promise
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
     };
-    allDonations();
+    fetchDonations();
   }, []);
-
   return (
     <Layouts>
       <PageBanner pageName={"Donations"} />
