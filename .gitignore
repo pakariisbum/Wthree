@@ -13,7 +13,7 @@ node_modules
 next.config.js
 # testing
 /coverage
-
+secret.txt
 # next.js
 /.next/
 /out/
