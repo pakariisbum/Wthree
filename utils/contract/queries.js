@@ -91,7 +91,7 @@ export async function hideDonation(donationId) {
 export async function addDonation(donationId, amount) {
   try {
     const contractObj = await contract();
-    const amountInWei = ethers.utils.parseEther(amount);
+    const amountInWei = ethers.parseEther(amount);
     const data = await contractObj.addDonation(donationId, amountInWei);
 
     const receipt = await data.wait();
@@ -130,7 +130,7 @@ export async function getDonation(donationId) {
 }
 
 function toWei(amount) {
-  const toWei = ethers.utils.parseUnits(amount.toString());
+  const toWei = ethers.parseUnits(amount.toString());
   return toWei;
 }
 
