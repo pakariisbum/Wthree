@@ -106,10 +106,12 @@ export async function getDonations() {
     const contractObj = await contract();
     const data = await contractObj.getDonations();
 
+    console.log(data);
     // Process and format the data as needed
     // Return the formatted donation data
     return data;
   } catch (e) {
+    console.log(e);
     return parseErrorMsg(e);
   }
 }
