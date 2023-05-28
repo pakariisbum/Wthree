@@ -126,7 +126,7 @@ export async function getDonation(donationId) {
     // Return the formatted donation data
     return data;
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return parseErrorMsg(e);
   }
 }
