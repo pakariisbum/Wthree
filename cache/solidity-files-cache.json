@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/albertmends/Documents/world3/contracts/World3.sol": {
-      "lastModificationDate": 1685296405412,
-      "contentHash": "ab1812d42057ecdeb840a78ade882b63",
+      "lastModificationDate": 1685298302774,
+      "contentHash": "394a488b0b28dd39a5d932a81d448dde",
       "sourceName": "contracts/World3.sol",
       "solcConfig": {
         "version": "0.8.9",
