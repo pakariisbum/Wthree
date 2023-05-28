@@ -5,6 +5,7 @@ import HeaderSidebar from "./HeaderSidebar";
 import { Blog, Contact, Donation, Home, Page, Portfolio } from "./Menus";
 import MobileMenu from "./MobileMenu";
 import StickNav from "./StickNav";
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 const Header = () => {
   const [sideBarToggle, setSideBarToggle] = useState(false);
@@ -82,6 +83,8 @@ const Header = () => {
                 >
                   <i className="far fa-search" />
                 </div>
+                <ConnectWallet theme="dark" />
+
                 <div
                   className="menu-bar sidemenu-nav-toggler"
                   onClick={() => setSideBarToggle(true)}
