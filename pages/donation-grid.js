@@ -5,6 +5,7 @@ import Link from "next/link";
 import PageBanner from "../src/components/PageBanner";
 import PatnerLogoSlider from "../src/components/PatnerLogoSlider";
 import Layouts from "../src/layouts/Layouts";
+import { getDonation } from "../utils/contract/queries";
 
 const Counter = dynamic(() => import("../src/components/Counter"), {
   ssr: false,
@@ -15,6 +16,14 @@ const DonutChart = dynamic(() => import("../src/components/DonutChart"), {
 });
 
 const DonationGrid = () => {
+  useEffect(() => {
+    const allDonations = async () => {
+      let res = getDonation();
+      console.log(res);
+    };
+    allDonations();
+  }, []);
+
   return (
     <Layouts>
       <PageBanner pageName={"Donations"} />
