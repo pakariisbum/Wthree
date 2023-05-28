@@ -112,7 +112,6 @@ export async function getDonations() {
     // Return the formatted donation data
     return data;
   } catch (e) {
-    console.log(e);
     return parseErrorMsg(e);
   }
 }
