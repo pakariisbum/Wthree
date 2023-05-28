@@ -33,7 +33,6 @@ export async function createDonation(
     console.log(receipt);
     return receipt;
   } catch (e) {
-    console.log(e);
     return parseErrorMsg(e);
   }
 }
@@ -124,6 +123,7 @@ function toWei(amount) {
 }
 
 function parseErrorMsg(e) {
+  console.log(e);
   const json = JSON.parse(JSON.stringify(e));
   return json?.reason || json?.error?.message;
 }
