@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@chainlink/src/v0.8/interfaces/AggregatorV3Interface.sol";
-import "@chainlink/src/v0.8/VRFConsumerBase.sol";
-import "@chainlink/src/v0.8/interfaces/KeeperCompatibleInterface.sol";
-import "@chainlink/src/v0.8/interfaces/AggregatorV3Interface.sol";
-import "@chainlink/src/v0.8/interfaces/LinkTokenInterface.sol";
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol";
+import "@chainlink/contracts/src/v0.8/interfaces/KeeperCompatibleInterface.sol";
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol";
 
 contract DonationContract is VRFConsumerBase, KeeperCompatibleInterface {
     struct Donation {
