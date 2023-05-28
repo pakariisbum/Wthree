@@ -45,10 +45,12 @@ export async function editDonation(
 ) {
   try {
     const contractObj = await contract();
+    const amountInWei = ethers.utils.parseEther(amount);
+
     const data = await contractObj.editDonation(
       donationId,
       name,
-      goal,
+      amountInWei,
       pictures,
       category,
       startTime,
