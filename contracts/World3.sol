@@ -10,19 +10,20 @@ import "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol";
 
 contract World3 is VRFConsumerBase, KeeperCompatibleInterface {
 
-  struct Donation {
-    string name;
-    string description;
-    uint256 goal;
-    uint256 amountRaised;
-    uint256 toGo;
-    string[] pictures;
-    string category;
-    uint256[] donorAmounts; // Array to store the donation amounts
-    address[] donors; // Array to store the addresses of the donors
-    uint256 startTime;
-    uint256 endTime;
-}
+    struct Donation {
+        string name;
+        string description;
+        uint256 goal;
+        uint256 amountRaised;
+        uint256 toGo;
+        string[] pictures;
+        string category;
+        uint256[] donorAmounts; // Array to store the donation amounts
+        address[] donors; // Array to store the addresses of the donors
+        uint256 startTime;
+        uint256 endTime;
+        string county; // County associated with the donation campaign
+    }
 
     mapping(address => uint256[]) private userDonations; // Mapping to store user donations
     mapping(uint256 => Donation) public donations;
@@ -59,15 +60,18 @@ contract World3 is VRFConsumerBase, KeeperCompatibleInterface {
 
     function createDonation(
         string memory _name,
-        string memory _category,
+        string memory _description,
         uint256 _goal,
         string[] memory _pictures,
+        string memory _category,
         uint256 _startTime,
-        uint256 _endTime
+        uint256 _endTime,
+        string memory _county
     ) public onlyOwner {
         require(_startTime < _endTime, "Invalid start and end time");
         Donation storage newDonation = donations[donationCount];
         newDonation.name = _name;
+        newDonation.description = _description;
         newDonation.goal = _goal;
         newDonation.amountRaised = 0;
         newDonation.toGo = _goal;
@@ -75,40 +79,46 @@ contract World3 is VRFConsumerBase, KeeperCompatibleInterface {
         newDonation.category = _category;
         newDonation.startTime = _startTime;
         newDonation.endTime = _endTime;
+        newDonation.county = _county;
         donationCount++;
     }
 
     function editDonation(
         uint256 _donationId,
         string memory _name,
+        string memory _description,
         uint256 _goal,
         string[] memory _pictures,
         string memory _category,
         uint256 _startTime,
-        uint256 _endTime
+        uint256 _endTime,
+        string memory _county
     ) public onlyOwner donationExists(_donationId) {
         require(_startTime < _endTime, "Invalid start and end time");
         Donation storage donation = donations[_donationId];
         donation.name = _name;
+        donation.description = _description;
         donation.goal = _goal;
         donation.pictures = _pictures;
         donation.category = _category;
         donation.startTime = _startTime;
         donation.endTime = _endTime;
+        donation.county = _county;
     }
 
     function hideDonation(uint256 _donationId) public onlyOwner donationExists(_donationId) {
         delete donations[_donationId];
     }
 
-  function getUserDonations(address _user) public view returns (Donation[] memory) {
-    uint256[] memory userDonationIds = userDonations[_user];
-    Donation[] memory userDonationList = new Donation[](userDonationIds.length);
-    for (uint256 i = 0; i < userDonationIds.length; i++) {
-      userDonationList[i] = donations[userDonationIds[i]];
+    function getUserDonations(address _user) public view returns (Donation[] memory) {
+        uint256[] memory userDonationIds = userDonations[_user];
+        Donation[] memory userDonationList = new Donation[](userDonationIds.length);
+        for (uint256 i = 0; i < userDonationIds.length; i++) {
+            userDonationList[i] = donations[userDonationIds[i]];
+        }
+        return userDonationList;
     }
-    return userDonationList;
-  }
+
     // User functions
 
     function addDonation(uint256 _donationId, uint256 _amount) public donationExists(_donationId) {
@@ -145,7 +155,8 @@ contract World3 is VRFConsumerBase, KeeperCompatibleInterface {
                 donorAmounts,
                 donation.donors,
                 donation.startTime,
-                donation.endTime
+                donation.endTime,
+                donation.county
             );
         }
         return allDonations;
