@@ -8,7 +8,7 @@ import "@chainlink/contracts/src/v0.8/interfaces/KeeperCompatibleInterface.sol";
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol";
 
-contract DonationContract is VRFConsumerBase, KeeperCompatibleInterface {
+contract World3 is VRFConsumerBase, KeeperCompatibleInterface {
 
   struct Donation {
     string name;
