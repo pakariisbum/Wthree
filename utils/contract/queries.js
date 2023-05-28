@@ -1,7 +1,7 @@
-import { BigNumber, ethers } from "ethers";
+import { ethers } from "ethers";
 import { contract } from "./index";
 import { toEth } from "./ether-utils";
-
+import { parseUnits } from "ethers/lib/utils";
 export async function createDonation(
   name,
   description,
@@ -132,8 +132,7 @@ export async function getDonation(donationId) {
 }
 
 function toWei(amount) {
-  const toWei = ethers.utils.parseUnits(amount.toString());
-  return toWei;
+  return parseUnits(amount.toString());
 }
 
 function parseErrorMsg(e) {
