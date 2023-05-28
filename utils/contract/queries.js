@@ -26,8 +26,10 @@ export async function createDonation(
     );
 
     const receipt = await data.wait();
+    console.log(receipt);
     return receipt;
   } catch (e) {
+    console.log(e);
     return parseErrorMsg(e);
   }
 }
