@@ -5,7 +5,7 @@ import Link from "next/link";
 import PageBanner from "../src/components/PageBanner";
 import PatnerLogoSlider from "../src/components/PatnerLogoSlider";
 import Layouts from "../src/layouts/Layouts";
-import { getDonation } from "../utils/contract/queries";
+import { getDonations } from "../utils/contract/queries";
 
 const Counter = dynamic(() => import("../src/components/Counter"), {
   ssr: false,
