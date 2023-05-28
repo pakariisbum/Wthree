@@ -24,7 +24,7 @@ contract World3 is VRFConsumerBase, KeeperCompatibleInterface {
     uint256 endTime;
 }
 
-
+    mapping(address => uint256[]) private userDonations; // Mapping to store user donations
     mapping(uint256 => Donation) public donations;
     uint256 public donationCount;
 
@@ -101,6 +101,14 @@ contract World3 is VRFConsumerBase, KeeperCompatibleInterface {
         delete donations[_donationId];
     }
 
+  function getUserDonations(address _user) public view returns (Donation[] memory) {
+    uint256[] memory userDonationIds = userDonations[_user];
+    Donation[] memory userDonationList = new Donation[](userDonationIds.length);
+    for (uint256 i = 0; i < userDonationIds.length; i++) {
+      userDonationList[i] = donations[userDonationIds[i]];
+    }
+    return userDonationList;
+  }
     // User functions
 
     function addDonation(uint256 _donationId, uint256 _amount) public donationExists(_donationId) {
@@ -111,7 +119,7 @@ contract World3 is VRFConsumerBase, KeeperCompatibleInterface {
         donation.toGo = donation.goal - donation.amountRaised;
         donation.donorAmounts.push(_amount);
         donation.donors.push(msg.sender);
-
+        userDonations[msg.sender].push(_donationId);
         if (donation.amountRaised >= (donation.goal * MIN_THRESHOLD_PERCENTAGE) / 100) {
             // Trigger Chainlink Keepers function
             donationAccumulated += donation.amountRaised;
