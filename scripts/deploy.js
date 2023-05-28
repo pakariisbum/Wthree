@@ -8,12 +8,12 @@ const hre = require("hardhat");
 const { ethers } = require("hardhat");
 
 async function main() {
-  const VDSPToken = await ethers.getContractFactory("VDSPToken");
-  const vdspToken = await VDSPToken.deploy(10); // Specify the initial supply here
+  const World3 = await ethers.getContractFactory("World3");
+  const world3 = await World3.deploy(); // Specify the initial supply here
 
-  await vdspToken.deployed();
+  await world3.deployed();
 
-  console.log("VDSPToken deployed to:", vdspToken.address);
+  console.log("World3 deployed to:", world3.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
