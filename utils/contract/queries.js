@@ -2,15 +2,26 @@ import { BigNumber, ethers } from "ethers";
 import { contract } from "./index";
 import { toEth } from "./ether-utils";
 
-export async function swap(amount, fromToken, toToken) {
+export async function createDonation(
+  name,
+  description,
+  goal,
+  pictures,
+  category,
+  startTime,
+  endTime
+) {
   try {
-    let tx = { value: toWei(amount) };
-    console.log("@@@@SUPPOSED AMOUNT IN WEI", fromToken, toToken);
-    const amountInWei = ethers.utils.parseEther(amount);
-    console.log("@@@@SUPPOSED AMOUNT IN WEI", amountInWei);
-
-    const contractObj = await contract();
-    const data = await contractObj.swap(fromToken, amountInWei, toToken);
+    const contractObj = await contract(); // Assuming you have a contract function to get the contract instance
+    const data = await contractObj.createDonation(
+      name,
+      description,
+      goal,
+      pictures,
+      category,
+      startTime,
+      endTime
+    );
 
     const receipt = await data.wait();
     return receipt;
@@ -19,12 +30,26 @@ export async function swap(amount, fromToken, toToken) {
   }
 }
 
-export async function tip(amount, recipient) {
+export async function editDonation(
+  donationId,
+  name,
+  goal,
+  pictures,
+  category,
+  startTime,
+  endTime
+) {
   try {
-    let tx = { value: toWei(amount) };
-    const amountInWei = ethers.utils.parseEther(amount);
     const contractObj = await contract();
-    const data = await contractObj.transfer(recipient, amountInWei);
+    const data = await contractObj.editDonation(
+      donationId,
+      name,
+      goal,
+      pictures,
+      category,
+      startTime,
+      endTime
+    );
 
     const receipt = await data.wait();
     return receipt;
@@ -33,22 +58,52 @@ export async function tip(amount, recipient) {
   }
 }
 
-export async function getBal(address) {
+export async function hideDonation(donationId) {
   try {
     const contractObj = await contract();
-    const data = await contractObj.balanceOf(address);
+    const data = await contractObj.hideDonation(donationId);
+
+    const receipt = await data.wait();
+    return receipt;
+  } catch (e) {
+    return parseErrorMsg(e);
+  }
+}
+
+export async function addDonation(donationId, amount) {
+  try {
+    const contractObj = await contract();
+    const data = await contractObj.addDonation(donationId, amount);
+
+    const receipt = await data.wait();
+    return receipt;
+  } catch (e) {
+    return parseErrorMsg(e);
+  }
+}
+
+export async function getDonations() {
+  try {
+    const contractObj = await contract();
+    const data = await contractObj.getDonations();
+
+    // Process and format the data as needed
+    // Return the formatted donation data
     return data;
   } catch (e) {
     return parseErrorMsg(e);
   }
 }
 
-function toWei(amount) {
-  const toWei = ethers.utils.parseUnits(amount.toString());
-  return toWei;
-}
+export async function getDonation(donationId) {
+  try {
+    const contractObj = await contract();
+    const data = await contractObj.getDonation(donationId);
 
-function parseErrorMsg(e) {
-  const json = JSON.parse(JSON.stringify(e));
-  return json?.reason || json?.error?.message;
+    // Process and format the data as needed
+    // Return the formatted donation data
+    return data;
+  } catch (e) {
+    return parseErrorMsg(e);
+  }
 }
