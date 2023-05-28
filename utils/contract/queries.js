@@ -13,16 +13,20 @@ export async function createDonation(
   endTime
 ) {
   try {
-    const contractObj = await contract(); // Assuming you have a contract function to get the contract instance
+    const contractObj = await contract();
+    // Assuming you have a contract function to get the contract instance
+    const amountInWei = ethers.utils.parseEther(goal);
+    const startTime_ = Math.floor(startTime.getTime() / 1000); // Convert to Unix timestamp
+    const endTime_ = Math.floor(endTime.getTime() / 1000); // Convert to Unix timestamp
     const data = await contractObj.createDonation(
       name,
       description,
-      goal,
+      amountInWei,
       pictures,
       category,
-      startTime,
+      startTime_,
       country,
-      endTime
+      endTime_
     );
 
     const receipt = await data.wait();
@@ -45,12 +49,11 @@ export async function editDonation(
 ) {
   try {
     const contractObj = await contract();
-    const amountInWei = ethers.utils.parseEther(amount);
 
     const data = await contractObj.editDonation(
       donationId,
       name,
-      amountInWei,
+      goal,
       pictures,
       category,
       startTime,
