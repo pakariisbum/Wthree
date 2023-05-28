@@ -77,13 +77,14 @@ const Header = () => {
                 </div>
               </div>
               <div className="right-column">
+                <ConnectWallet theme="dark" />
+
                 <div
                   className="search-toggler"
                   onClick={() => setSearchToggle(true)}
                 >
                   <i className="far fa-search" />
                 </div>
-                <ConnectWallet theme="dark" />
 
                 <div
                   className="menu-bar sidemenu-nav-toggler"
